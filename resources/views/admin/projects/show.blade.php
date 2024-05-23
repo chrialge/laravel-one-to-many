@@ -55,7 +55,7 @@
                 @endif
 
                 <span class="d-block py-2"><strong>URL: </strong> {{ $project->url }}</span>
-
+                <span><strong>Type: </strong>{{ $project->type ? $project->type->name : 'Untyped' }}</span>
                 <p class="py-2">
                     <strong>Description:</strong>
                     {{ $project->description }}

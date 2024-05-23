@@ -22,6 +22,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'type_id' => 'nullable|exists:types.id',
             'name' => 'required',
             'url' => 'required',
             'cover_image' => 'nullable|image|max:500',

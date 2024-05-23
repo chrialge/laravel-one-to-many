@@ -64,6 +64,19 @@
                 @enderror
             </div>
 
+
+
+            <div class="mb-3">
+                <label for="type_id" class="form-label">Status</label>
+                <select class="form-select form-select-lg" name="type_id" id="type_id">
+                    <option selected disabled>Select a category</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
+                            {{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select form-select-lg" name="status" id="status">
@@ -91,7 +104,8 @@
                 <input type="text" class="form-control @error('finish_date') is-invalid @enderror" name="finish_date"
                     id="finish_date" aria-describedby="finishDateHelper" placeholder="2024-03-20"
                     value="{{ old('finish_date') }}" />
-                <small id="finishDateHelper" class="form-text text-muted">Type a finish date for the current project</small>
+                <small id="finishDateHelper" class="form-text text-muted">Type a finish date for the current
+                    project</small>
 
                 @error('finish_date')
                     <div class="text-danger">{{ $message }}</div>

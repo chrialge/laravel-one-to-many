@@ -31,7 +31,14 @@
 
             <div class="col d-flex justify-content-end gap-3">
                 <span><strong>Start date:</strong> {{ $project->start_date }}</span>
-                <span><strong>Finish date:</strong> {{ $project->finish_date }}</span>
+                <span><strong>Finish date:</strong>
+                    @if (isset($project->finish_date))
+                        {{ $project->finish_date }}
+                    @else
+                        N/A
+                    @endif
+
+                </span>
             </div>
         </div>
         <div class="row">
@@ -58,17 +65,20 @@
                 <span><strong>Type: </strong>{{ $project->type ? $project->type->name : 'Untyped' }}</span>
                 <p class="py-2">
                     <strong>Description:</strong>
-                    {{ $project->description }}
+                    @if (isset($project->description))
+                        {{ $project->description }}
+                    @else
+                        N/A
+                    @endif
+
                 </p>
 
             </div>
             <div class="col-6">
-                <h5>Videos:</h5>
-                <p class="py-2">
-                    <strong>Notes:</strong>
-                    {{ $project->notes }}
-                </p>
+
+
                 @if (isset($project->video))
+                    <h5>Videos:</h5>
                     <video width="320" height="240" controls>
                         @if (Str::finish($project->video, '.mp4'))
                             <source src="{{ asset('storage/' . $project->video) }}" type="video/mp4">
@@ -79,7 +89,18 @@
 
                     </video>
                 @endif
+                <p class="py-2">
+                    <strong>Notes:</strong>
 
+
+                    @if (isset($project->notes))
+                        {{ $project->notes }}
+                    @else
+                        N/A
+                    @endif
+
+
+                </p>
             </div>
         </div>
 

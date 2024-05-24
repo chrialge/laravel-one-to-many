@@ -67,7 +67,7 @@
 
 
             <div class="mb-3">
-                <label for="type_id" class="form-label">Status</label>
+                <label for="type_id" class="form-label">type</label>
                 <select class="form-select form-select-lg" name="type_id" id="type_id">
                     <option selected disabled>Select a category</option>
                     @foreach ($types as $type)

@@ -16,7 +16,9 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Url</th>
+                        <th scope="col">project github</th>
+                        <th scope="col">type</th>
+
                         <th scope="col">Image</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">Finish Date</th>
@@ -30,14 +32,15 @@
                         <tr class="">
                             <td scope="row">{{ $project->id }}</td>
                             <td>{{ $project->name }}</td>
-                            <td>{{ $project->url }}</td>
+                            <td><a href="{{ $project->url }}">view project</a></td>
+                            <td>{{ $project->type ? $project->type->name : 'Untyped' }}</td>
 
                             <td>
                                 @if (Str::contains($project->cover_image, ['https://', 'http://']))
                                     <img src="{{ $project->cover_image }}" alt="Image of project: {{ $project->title }}">
                                 @else
                                     <img width="140" src="{{ asset('storage/' . $project->cover_image) }}"
-                                        alt="Image of project: {{ $project->title }}">
+                                        alt="{{ $project->title ? "Image of project: $project->title" : "don't image of the project" }}">
                                 @endif
 
 

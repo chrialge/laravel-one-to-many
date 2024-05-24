@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: calc(100vh - 125px)">
         <div class="d-flex align-items-center justify-content-between py-5">
             <h3>Types</h3>
             <a href="{{ route('admin.types.create') }}" class="btn btn-primary">
@@ -98,7 +98,7 @@
                     @empty
                         <tr class="">
                             <h1>
-                                I don't have Projects!!! 😭
+                                I don't have Type!!! 😭
                             </h1>
                         </tr>
                     @endforelse

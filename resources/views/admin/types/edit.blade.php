@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container p-5">
+    <div class="container p-5" style="height: calc(100vh - 100px)">
 
         @include('partials.validate')
 
@@ -13,7 +13,7 @@
         </div>
 
         {{-- @include('partials.validator_error') --}}
-        <form action="{{ route('admin.types.update', $type) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.types.update', $type) }}" method="post">
             @csrf
 
             @method('PUT')

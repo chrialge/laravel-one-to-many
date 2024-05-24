@@ -99,7 +99,7 @@
             </div>
         </nav>
 
-        <main class=" bg-body-tertiary" style="padding-top: 100px">>
+        <main class=" bg-body-tertiary" style="padding-top: 100px">
             @yield('content')
         </main>
     </div>

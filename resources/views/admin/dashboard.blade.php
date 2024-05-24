@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container " style="height: calc(100vh - 125px)">
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Dashboard') }}
         </h2>
@@ -17,7 +17,14 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        <h5>{{ __('You are logged in!') }}</h5>
+
+                        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary mt-2">
+                            My projects
+                        </a>
+                        <a href="{{ route('admin.types.index') }}" class="btn btn-dark mt-2">
+                            My types
+                        </a>
                     </div>
                 </div>
             </div>
